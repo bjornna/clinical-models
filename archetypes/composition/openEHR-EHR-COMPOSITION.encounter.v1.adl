@@ -1,0 +1,100 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-COMPOSITION.encounter.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::en]>
+    translations = <
+        ["nb"] = <
+            language = <[ISO_639-1::nb]>
+            author = <
+                ["name"] = <"?">
+            >
+        >
+        ["no"] = <
+            language = <[ISO_639-1::no]>
+            author = <
+                ["email"] = <"bna@dips.no">
+                ["name"] = <"Bjørn Næss">
+                ["organisation"] = <"DIPS ASA">
+            >
+        >
+    >
+
+description
+    original_author = <
+        ["name"] = <"Thomas Beale">
+        ["organisation"] = <"Ocean Informatics">
+        ["date"] = <"2005-10-10">
+    >
+    lifecycle_state = <"AuthorDraft">
+    details = <
+        ["no"] = <
+            language = <[ISO_639-1::no]>
+            purpose = <"Registrering av kontakt eller framgang som notat ">
+            keywords = <"*progress(en)","*note(en)","*encounter(en)">
+            copyright = <"*© openEHR Foundation(en)">
+        >
+        ["en"] = <
+            language = <[ISO_639-1::en]>
+            purpose = <"Record of encounter as a progress note.">
+            keywords = <"progress","note","encounter">
+            copyright = <"© openEHR Foundation">
+        >
+        ["nb"] = <
+            language = <[ISO_639-1::nb]>
+            purpose = <"Registrering av kontakt eller framgang som notat ">
+            keywords = <"*progress(en)","*note(en)","*encounter(en)">
+            copyright = <"*© openEHR Foundation(en)">
+        >
+    >
+
+definition
+    COMPOSITION[at0000] matches {
+        category matches {
+            DV_CODED_TEXT matches {
+                defining_code matches {
+                    [openehr::433]
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["no"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Kontakt">
+                    description = <"Generelle kontakt eller framgangs notat ">
+
+                >
+            >
+        >
+        ["nb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Kontakt">
+                    description = <"Generelle kontakt eller framgangs notat ">
+
+                >
+            >
+        >
+        ["en"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Encounter">
+                    description = <"Generic encounter or progress note composition">
+
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

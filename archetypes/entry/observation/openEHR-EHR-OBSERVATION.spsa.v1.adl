@@ -1,0 +1,352 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.spsa.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::nb]>
+
+description
+    original_author = <
+        ["name"] = <"">
+    >
+    lifecycle_state = <"0">
+    details = <
+        ["nb"] = <
+            language = <[ISO_639-1::nb]>
+            purpose = <"Ikke kjent ">
+        >
+        ["no"] = <
+            language = <[ISO_639-1::no]>
+            purpose = <"Ikke kjent ">
+        >
+    >
+
+definition
+    OBSERVATION[at0000] matches {
+        data matches {
+            HISTORY[at0001] matches {
+                events cardinality matches {1..*; unordered} matches {
+                    EVENT[at0002] occurrences matches {0..1} matches {
+                        data matches {
+                            ITEM_TREE[at0003] matches {
+                                items cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0005] occurrences matches {0..1} matches {
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0010,
+                                                    at0011]
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0012] occurrences matches {0..1} matches {
+                                        value matches {
+                                            DV_TEXT matches {*}
+                                        }
+                                    }
+                                    ELEMENT[at0007] occurrences matches {0..1} matches {
+                                        value matches {
+                                            C_DV_QUANTITY <
+                                                property = <[openehr::497]>
+                                                list = <
+                                                    ["1"] = <
+                                                        units = <"'">
+                                                        magnitude = <|0.0..999999.9|>
+                                                        precision = <|1|>
+                                                    >
+                                                >
+                                            >
+                                        }
+                                    }
+                                    CLUSTER[at0008] occurrences matches {0..1} matches {
+                                        items cardinality matches {1..*; unordered} matches {
+                                            ELEMENT[at0013] occurrences matches {0..1} matches {
+                                                value matches {
+                                                    DV_BOOLEAN matches {
+                                                        value matches {true, false}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0009] occurrences matches {0..1} matches {
+                                                value matches {
+                                                    DV_BOOLEAN matches {
+                                                        value matches {true, false}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0014] occurrences matches {0..1} matches {
+                                                value matches {
+                                                    DV_BOOLEAN matches {
+                                                        value matches {true, false}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0015] occurrences matches {0..1} matches {
+                                                value matches {
+                                                    DV_BOOLEAN matches {
+                                                        value matches {true, false}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0016] occurrences matches {0..1} matches {
+                                                value matches {
+                                                    DV_BOOLEAN matches {
+                                                        value matches {true, false}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0017] occurrences matches {0..1} matches {
+                                                value matches {
+                                                    DV_BOOLEAN matches {
+                                                        value matches {true, false}
+                                                    }
+                                                }
+                                            }
+                                            ELEMENT[at0018] occurrences matches {0..1} matches {
+                                                value matches {
+                                                    DV_TEXT matches {*}
+                                                }
+                                            }
+                                            ELEMENT[at0019] occurrences matches {0..1} matches {
+                                                value matches {
+                                                    DV_CODED_TEXT matches {
+                                                        defining_code matches {
+                                                            [local::
+                                                            at0021,
+                                                            at0020]
+                                                        }
+                                                    }
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["no"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Spsa">
+                    description = <"Ikke kjent ">
+
+                >
+                ["at0001"] = <
+                    text = <"Event Series">
+                    description = <"@ internal @">
+
+                >
+                ["at0002"] = <
+                    text = <"Any event">
+                    description = <"*">
+
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+
+                >
+                ["at0005"] = <
+                    text = <"PSAMaalt">
+                    description = <"*">
+
+                >
+                ["at0007"] = <
+                    text = <"PSAVerdi">
+                    description = <"*">
+
+                >
+                ["at0008"] = <
+                    text = <"AarsakPSA">
+                    description = <"*">
+
+                >
+                ["at0009"] = <
+                    text = <"Helseskjekk">
+                    description = <"*">
+
+                >
+                ["at0010"] = <
+                    text = <"Ja">
+                    description = <"Ja">
+
+                >
+                ["at0011"] = <
+                    text = <"Nei">
+                    description = <"Nei">
+
+                >
+                ["at0012"] = <
+                    text = <"AarsakIkkeMaalt">
+                    description = <"*">
+
+                >
+                ["at0013"] = <
+                    text = <"MistankeKreft">
+                    description = <"*">
+
+                >
+                ["at0014"] = <
+                    text = <"UtredningLUTS">
+                    description = <"*">
+
+                >
+                ["at0015"] = <
+                    text = <"OpphopningProstata">
+                    description = <"*">
+
+                >
+                ["at0016"] = <
+                    text = <"PasientenOenske">
+                    description = <"*">
+
+                >
+                ["at0017"] = <
+                    text = <"AnnenAarsakPSA">
+                    description = <"*">
+
+                >
+                ["at0018"] = <
+                    text = <"AnnenAarsakPSASpesifiser">
+                    description = <"*">
+
+                >
+                ["at0019"] = <
+                    text = <"AarsakPSAUkjent">
+                    description = <"*">
+
+                >
+                ["at0020"] = <
+                    text = <"Avkrysset">
+                    description = <"Avkrysset">
+
+                >
+                ["at0021"] = <
+                    text = <"Ikke avkrysset">
+                    description = <"Ikke avkrysset">
+
+                >
+            >
+        >
+        ["nb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Spsa">
+                    description = <"Ikke kjent ">
+
+                >
+                ["at0001"] = <
+                    text = <"Event Series">
+                    description = <"@ internal @">
+
+                >
+                ["at0002"] = <
+                    text = <"Any event">
+                    description = <"*">
+
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+
+                >
+                ["at0005"] = <
+                    text = <"PSAMaalt">
+                    description = <"*">
+
+                >
+                ["at0007"] = <
+                    text = <"PSAVerdi">
+                    description = <"*">
+
+                >
+                ["at0008"] = <
+                    text = <"AarsakPSA">
+                    description = <"*">
+
+                >
+                ["at0009"] = <
+                    text = <"Helseskjekk">
+                    description = <"*">
+
+                >
+                ["at0010"] = <
+                    text = <"Ja">
+                    description = <"Ja">
+
+                >
+                ["at0011"] = <
+                    text = <"Nei">
+                    description = <"Nei">
+
+                >
+                ["at0012"] = <
+                    text = <"AarsakIkkeMaalt">
+                    description = <"*">
+
+                >
+                ["at0013"] = <
+                    text = <"MistankeKreft">
+                    description = <"*">
+
+                >
+                ["at0014"] = <
+                    text = <"UtredningLUTS">
+                    description = <"*">
+
+                >
+                ["at0015"] = <
+                    text = <"OpphopningProstata">
+                    description = <"*">
+
+                >
+                ["at0016"] = <
+                    text = <"PasientenOenske">
+                    description = <"*">
+
+                >
+                ["at0017"] = <
+                    text = <"AnnenAarsakPSA">
+                    description = <"*">
+
+                >
+                ["at0018"] = <
+                    text = <"AnnenAarsakPSASpesifiser">
+                    description = <"*">
+
+                >
+                ["at0019"] = <
+                    text = <"AarsakPSAUkjent">
+                    description = <"*">
+
+                >
+                ["at0020"] = <
+                    text = <"Avkrysset">
+                    description = <"Avkrysset">
+
+                >
+                ["at0021"] = <
+                    text = <"Ikke avkrysset">
+                    description = <"Ikke avkrysset">
+
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

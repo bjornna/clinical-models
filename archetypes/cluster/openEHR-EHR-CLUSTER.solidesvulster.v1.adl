@@ -1,0 +1,66 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-CLUSTER.solidesvulster.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::nb]>
+    translations = <
+        ["no"] = <
+            language = <[ISO_639-1::no]>
+            author = <
+                ["name"] = <"?">
+            >
+        >
+    >
+
+description
+    original_author = <
+        ["email"] = <"bna@dips.no">
+        ["organisation"] = <"DIPS ASA">
+        ["name"] = <"Bjørn Næss">
+        ["date"] = <"12.03.2013">
+    >
+    lifecycle_state = <"0">
+    details = <
+        ["nb"] = <
+            language = <[ISO_639-1::nb]>
+            purpose = <"Ikke kjent ">
+        >
+        ["no"] = <
+            language = <[ISO_639-1::no]>
+            purpose = <"Ikke kjent ">
+        >
+    >
+
+definition
+    CLUSTER[at0000] matches {*}
+
+ontology
+    term_definitions = <
+        ["no"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Solidesvulster">
+                    description = <"Ikke kjent ">
+
+                >
+            >
+        >
+        ["nb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Solidesvulster">
+                    description = <"Ikke kjent ">
+
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

@@ -1,0 +1,206 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-ADMIN_ENTRY.pasientbehandlingsinstitusjon.v1
+
+concept
+	[at0000]	-- Pasientbehandlingsinstitusjon
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"E5D5A760A9FB47C7EAB2CD6EF79C2ABF">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {	-- Pasientbehandlingsinstitusjon
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- FodelsnummerHF
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- NavnHF
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..1} matches {	-- Sykehusnavn
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {[local::]}
+							}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {	-- Sykehuskode
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {	-- Avdelingsnavn
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {[local::]}
+							}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- Avdelingskode
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {	-- Hospitalisert
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0009, 	-- Innlagt
+									at0010, 	-- Poliklinisk
+									at0011, 	-- Dagkirurgisk
+									at0012]	-- Ukjent
+								}
+							}
+						}
+					}
+					ELEMENT[at0013] occurrences matches {0..1} matches {	-- DatoHospitalisert
+						value matches {
+							DV_DATE matches {*}
+						}
+					}
+					CLUSTER[at0014] occurrences matches {0..1} matches {	-- Melder
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0015] occurrences matches {0..1} matches {	-- MeldersNavn
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0017] occurrences matches {0..1} matches {	-- MelderID
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0016] occurrences matches {0..1} matches {	-- MeldeDato
+								value matches {
+									DV_DATE matches {*}
+								}
+							}
+							ELEMENT[at0018] occurrences matches {0..1} matches {	-- AnsvarligLege
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0019] occurrences matches {0..1} matches {	-- AnsvarligLegeID
+								value matches {
+									DV_COUNT matches {
+										magnitude matches {|0..9999999|}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pasientbehandlingsinstitusjon">
+					description = <"Inneholder opplysninger om pasienten (navn og fnummer), behandlende sykehus, avdeling, dato for innleggelse, type innleggelse, behandlende lege, legeid, melder, meldeid og meldedato">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"FodelsnummerHF">
+					description = <"Pasientens fødselsnummer, 11 siffer">
+				>
+				["at0003"] = <
+					text = <"NavnHF">
+					description = <"Pasientens navn">
+				>
+				["at0004"] = <
+					text = <"Sykehusnavn">
+					description = <"Navnet på behandlende sykehus">
+				>
+				["at0005"] = <
+					text = <"Sykehuskode">
+					description = <"Interne sykehuskoder for KRG">
+				>
+				["at0006"] = <
+					text = <"Avdelingsnavn">
+					description = <"Navnet på behandlende avdeling">
+				>
+				["at0007"] = <
+					text = <"Avdelingskode">
+					description = <"Interne avdelingskoder for KRG">
+				>
+				["at0008"] = <
+					text = <"Hospitalisert">
+					description = <"Type innleggelse">
+				>
+				["at0009"] = <
+					text = <"Innlagt">
+					description = <"Innlagt">
+				>
+				["at0010"] = <
+					text = <"Poliklinisk">
+					description = <"Poliklinisk">
+				>
+				["at0011"] = <
+					text = <"Dagkirurgisk">
+					description = <"Dagkirurgisk">
+				>
+				["at0012"] = <
+					text = <"Ukjent">
+					description = <"Ukjent">
+				>
+				["at0013"] = <
+					text = <"DatoHospitalisert">
+					description = <"Dato for innleggelse/konsultasjon">
+				>
+				["at0014"] = <
+					text = <"Melder">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"MeldersNavn">
+					description = <"Inneholder opplysninger om melder, meldedato og behandlende lege">
+				>
+				["at0016"] = <
+					text = <"MeldeDato">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"MelderID">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"AnsvarligLege">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"AnsvarligLegeID">
+					description = <"*">
+				>
+			>
+		>
+	>

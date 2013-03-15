@@ -1,0 +1,172 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-ADMIN_ENTRY.navigering.v1
+
+concept
+	[at0000]	-- Navigering
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"2CB2FDAA8759007018157C60DBD27609">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {	-- Navigering
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Meldingstittel
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					CLUSTER[at0003] occurrences matches {0..1} matches {	-- Meldingsvalg
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0004] occurrences matches {0..1} matches {	-- MeldingstypeSub1
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0005, 	-- Primærsykdom
+											at0006]	-- Tilbakefall
+										}
+									}
+								}
+							}
+							ELEMENT[at0007] occurrences matches {0..1} matches {	-- MeldingstypeSub2
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0008, 	-- Utredning
+											at0009, 	-- Kirurgi
+											at0010, 	-- Kjemoterapi
+											at0011, 	-- Hormonbehandling
+											at0012, 	-- Strålebehandling
+											at0013, 	-- Annen behandling
+											at0014]	-- Kontroll
+										}
+									}
+								}
+							}
+							ELEMENT[at0015] occurrences matches {0..1} matches {	-- MeldingsNr
+								value matches {
+									DV_CODED_TEXT matches {
+										defining_code matches {
+											[local::
+											at0016, 	-- 100
+											at0017, 	-- 200
+											at0018, 	-- 300
+											at0019]	-- 400
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Navigering">
+					description = <"Velge meldingstype utra hvor i forløpet man er">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Meldingstittel">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Meldingsvalg">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"MeldingstypeSub1">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"Primærsykdom">
+					description = <"Primærsykdom">
+				>
+				["at0006"] = <
+					text = <"Tilbakefall">
+					description = <"Tilbakefall">
+				>
+				["at0007"] = <
+					text = <"MeldingstypeSub2">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Utredning">
+					description = <"Utredning">
+				>
+				["at0009"] = <
+					text = <"Kirurgi">
+					description = <"Kirurgi">
+				>
+				["at0010"] = <
+					text = <"Kjemoterapi">
+					description = <"Kjemoterapi">
+				>
+				["at0011"] = <
+					text = <"Hormonbehandling">
+					description = <"Hormonbehandling">
+				>
+				["at0012"] = <
+					text = <"Strålebehandling">
+					description = <"Strålebehandling">
+				>
+				["at0013"] = <
+					text = <"Annen behandling">
+					description = <"Annen behandling">
+				>
+				["at0014"] = <
+					text = <"Kontroll">
+					description = <"Kontroll">
+				>
+				["at0015"] = <
+					text = <"MeldingsNr">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"100">
+					description = <"Utredning primær">
+				>
+				["at0017"] = <
+					text = <"200">
+					description = <"Kirurgi primær">
+				>
+				["at0018"] = <
+					text = <"300">
+					description = <"Kjemoterapi primær">
+				>
+				["at0019"] = <
+					text = <"400">
+					description = <"Hormon primær">
+				>
+			>
+		>
+	>

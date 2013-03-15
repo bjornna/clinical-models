@@ -1,0 +1,210 @@
+archetype (adl_version=1.4)
+    openEHR-EHR-OBSERVATION.whostatus.v1
+
+concept
+    [at0000]
+
+language
+    original_language = <[ISO_639-1::nb]>
+    translations = <
+        ["no"] = <
+            language = <[ISO_639-1::no]>
+            author = <
+                ["name"] = <"?">
+            >
+        >
+    >
+
+description
+    original_author = <
+        ["name"] = <"">
+    >
+    lifecycle_state = <"0">
+    details = <
+        ["nb"] = <
+            language = <[ISO_639-1::nb]>
+            purpose = <"Ikke kjent ">
+        >
+        ["no"] = <
+            language = <[ISO_639-1::no]>
+            purpose = <"Ikke kjent ">
+        >
+    >
+
+definition
+    OBSERVATION[at0000] matches {
+        data matches {
+            HISTORY[at0001] matches {
+                events cardinality matches {1..*; unordered} matches {
+                    EVENT[at0002] occurrences matches {0..1} matches {
+                        data matches {
+                            ITEM_TREE[at0003] matches {
+                                items cardinality matches {0..*; unordered} matches {
+                                    ELEMENT[at0004] occurrences matches {0..1} matches {
+                                        value matches {
+                                            DV_CODED_TEXT matches {
+                                                defining_code matches {
+                                                    [local::
+                                                    at0005,
+                                                    at0006,
+                                                    at0007,
+                                                    at0008,
+                                                    at0009,
+                                                    at0010]
+                                                }
+                                            }
+                                        }
+                                    }
+                                    ELEMENT[at0011] occurrences matches {0..1} matches {
+                                        value matches {
+                                            DV_DATE matches {
+                                                value matches {yyyy-mm-dd}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+ontology
+    term_definitions = <
+        ["no"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Whostatus">
+                    description = <"Funksjonsstatus">
+
+                >
+                ["at0001"] = <
+                    text = <"Event Series">
+                    description = <"@ internal @">
+
+                >
+                ["at0002"] = <
+                    text = <"Any event">
+                    description = <"*">
+
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+
+                >
+                ["at0004"] = <
+                    text = <"WHOstatus">
+                    description = <"*">
+
+                >
+                ["at0005"] = <
+                    text = <"0: Normal aktivitet, uten begrensningser">
+                    description = <"*">
+
+                >
+                ["at0006"] = <
+                    text = <"1: Lett redusert arbeidskapasitet">
+                    description = <"*">
+
+                >
+                ["at0007"] = <
+                    text = <"2: > 50 % av dagen oppegående">
+                    description = <"*">
+
+                >
+                ["at0008"] = <
+                    text = <"3: > 50 % av dagen i seng/stillesittende">
+                    description = <"*">
+
+                >
+                ["at0009"] = <
+                    text = <"4: Totalt stillesittende eller i seng hele dagen">
+                    description = <"*">
+
+                >
+                ["at0010"] = <
+                    text = <"Ukjent/har ikke informasjon">
+                    description = <"*">
+
+                >
+                ["at0011"] = <
+                    text = <"DatoWHOstatus">
+                    description = <"*">
+
+                >
+            >
+        >
+        ["nb"] = <
+            items = <
+                ["at0000"] = <
+                    text = <"Whostatus">
+                    description = <"Funksjonsstatus">
+
+                >
+                ["at0001"] = <
+                    text = <"Event Series">
+                    description = <"@ internal @">
+
+                >
+                ["at0002"] = <
+                    text = <"Any event">
+                    description = <"*">
+
+                >
+                ["at0003"] = <
+                    text = <"Tree">
+                    description = <"@ internal @">
+
+                >
+                ["at0004"] = <
+                    text = <"WHOstatus">
+                    description = <"*">
+
+                >
+                ["at0005"] = <
+                    text = <"0: Normal aktivitet, uten begrensningser">
+                    description = <"*">
+
+                >
+                ["at0006"] = <
+                    text = <"1: Lett redusert arbeidskapasitet">
+                    description = <"*">
+
+                >
+                ["at0007"] = <
+                    text = <"2: > 50 % av dagen oppegående">
+                    description = <"*">
+
+                >
+                ["at0008"] = <
+                    text = <"3: > 50 % av dagen i seng/stillesittende">
+                    description = <"*">
+
+                >
+                ["at0009"] = <
+                    text = <"4: Totalt stillesittende eller i seng hele dagen">
+                    description = <"*">
+
+                >
+                ["at0010"] = <
+                    text = <"Ukjent/har ikke informasjon">
+                    description = <"*">
+
+                >
+                ["at0011"] = <
+                    text = <"DatoWHOstatus">
+                    description = <"*">
+
+                >
+            >
+        >
+    >
+    constraint_definitions = <
+    >
+    term_binding = <
+    >
+    constraint_binding = <
+    >

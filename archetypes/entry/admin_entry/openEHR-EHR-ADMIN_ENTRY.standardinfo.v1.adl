@@ -1,0 +1,165 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-ADMIN_ENTRY.standardinfo.v1
+
+concept
+	[at0000]	-- StdInfo
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"9AB2A99E313A8FA06B139C1D8368A5C2">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {	-- StdInfo
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					CLUSTER[at0003] occurrences matches {0..1} matches {	-- PasientInstitusjon
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0005] occurrences matches {0..1} matches {	-- FodselsnummerKRG
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0004] occurrences matches {0..1} matches {	-- FodselsnummerHF
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0006] occurrences matches {0..1} matches {	-- NavnHF
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0007] occurrences matches {0..1} matches {	-- Sykehuskode
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0008] occurrences matches {0..1} matches {	-- Avdelingsnavn
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0009] occurrences matches {0..1} matches {	-- Avdelingskode
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0010] occurrences matches {0..1} matches {	-- Kommentarfelt
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0011] occurrences matches {0..1} matches {	-- Kommentar
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+					CLUSTER[at0013] occurrences matches {0..1} matches {	-- Melder
+						items cardinality matches {1..*; unordered} matches {
+							ELEMENT[at0014] occurrences matches {0..1} matches {	-- MeldersNavn
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0015] occurrences matches {0..1} matches {	-- MeldeDato
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+							ELEMENT[at0016] occurrences matches {0..1} matches {	-- MelderID
+								value matches {
+									DV_TEXT matches {*}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"StdInfo">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0003"] = <
+					text = <"PasientInstitusjon">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"FodselsnummerHF">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"FodselsnummerKRG">
+					description = <"*">
+				>
+				["at0006"] = <
+					text = <"NavnHF">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Sykehuskode">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Avdelingsnavn">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Avdelingskode">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Kommentarfelt">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"Kommentar">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Melder">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"MeldersNavn">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"MeldeDato">
+					description = <"*">
+				>
+				["at0016"] = <
+					text = <"MelderID">
+					description = <"*">
+				>
+			>
+		>
+	>

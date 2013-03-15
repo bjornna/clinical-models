@@ -1,0 +1,162 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-ADMIN_ENTRY.meldingsinfo.v1
+
+concept
+	[at0000]	-- Meldingsinformasjon
+language
+	original_language = <[ISO_639-1::nb]>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"ECD83BDF434CDC68AB8B15BEC4FC202F">
+	>
+
+definition
+	ADMIN_ENTRY[at0000] matches {	-- Meldingsinformasjon
+		data matches {
+			ITEM_TREE[at0001] matches {	-- Tree
+				items cardinality matches {0..*; unordered} matches {
+					ELEMENT[at0002] occurrences matches {0..1} matches {	-- Krefttype
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0003] occurrences matches {0..1} matches {	-- VersjonsNr
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0004] occurrences matches {0..1} matches {	-- VersjonsNrOrginal
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0005] occurrences matches {0..1} matches {	-- KRG_GUID
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0006] occurrences matches {0..1} matches {	-- VersjonIP
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0007] occurrences matches {0..1} matches {	-- VersjonBT
+						value matches {
+							DV_COUNT matches {*}
+						}
+					}
+					ELEMENT[at0008] occurrences matches {0..1} matches {	-- TidspunktSubmit
+						value matches {
+							DV_DATE_TIME matches {
+								value matches {yyyy-mm-ddTHH:MM:SS}
+							}
+						}
+					}
+					ELEMENT[at0009] occurrences matches {0..1} matches {	-- Brukernavn
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0010] occurrences matches {0..1} matches {	-- Filnavn
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+					ELEMENT[at0011] occurrences matches {0..1} matches {	-- VersjonInternEkstern
+						value matches {
+							DV_CODED_TEXT matches {
+								defining_code matches {
+									[local::
+									at0012, 	-- Eksternt skjema
+									at0013, 	-- Internt mottak
+									at0014]	-- Intern registrering av papirskjema
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Meldingsinformasjon">
+					description = <"Administrative data for KRG">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Krefttype">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"VersjonsNr">
+					description = <"*">
+				>
+				["at0004"] = <
+					text = <"VersjonsNrOrginal">
+					description = <"*">
+				>
+				["at0005"] = <
+					text = <"KRG_GUID">
+					description = <"Unik indikator som identifiserer medlingen. Generes automatisk">
+				>
+				["at0006"] = <
+					text = <"VersjonIP">
+					description = <"Versjonsnummer InfoPath">
+				>
+				["at0007"] = <
+					text = <"VersjonBT">
+					description = <"Versjon BizTalk">
+				>
+				["at0008"] = <
+					text = <"TidspunktSubmit">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Brukernavn">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Filnavn">
+					description = <"*">
+				>
+				["at0011"] = <
+					text = <"VersjonInternEkstern">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Eksternt skjema">
+					description = <"Eksternt skjema">
+				>
+				["at0013"] = <
+					text = <"Internt mottak">
+					description = <"Internt mottak">
+				>
+				["at0014"] = <
+					text = <"Intern registrering av papirskjema">
+					description = <"Intern registrering av papirskjema">
+				>
+			>
+		>
+	>
