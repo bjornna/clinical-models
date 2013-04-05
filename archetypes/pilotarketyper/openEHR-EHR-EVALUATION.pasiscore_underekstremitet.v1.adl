@@ -1,0 +1,90 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.pasiscore_underekstremitet.v1
+
+concept
+	[at0000]	-- Pasiscore underekstremitet
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["no"] = <
+			language = <[ISO_639-1::no]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["no"] = <
+			language = <[ISO_639-1::no]>
+			purpose = <"*(nb)">
+			use = <"*(nb)">
+			misuse = <"*(nb)">
+			copyright = <"*(nb)">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"7E1C3E563FDADD5B8869CB5ABF242251">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- Pasiscore underekstremitet
+		data matches {
+			ITEM_TREE[at0001] matches {	-- *Tree(nb)
+				items cardinality matches {0..*; unordered} matches {
+					allow_archetype CLUSTER[at0002] occurrences matches {0..*} matches {	-- PASISCORE underekstremitet
+						include
+							archetype_id/value matches {/openEHR-EHR-CLUSTER\.anatomical_location-precise(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-CLUSTER\.pasi_underekstremitet(-[a-zA-Z0-9_]+)*\.v3/}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["no"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pasiscore underekstremitet">
+					description = <"">
+				>
+				["at0001"] = <
+					text = <"*Tree(nb)">
+					description = <"*@ internal @(nb)">
+				>
+				["at0002"] = <
+					text = <"PASISCORE underekstremitet">
+					description = <"">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pasiscore underekstremitet">
+					description = <"unknown">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"PASISCORE underekstremitet">
+					description = <"*">
+				>
+			>
+		>
+	>

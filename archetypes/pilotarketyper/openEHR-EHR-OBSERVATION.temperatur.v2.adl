@@ -1,0 +1,193 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.temperatur.v2
+
+concept
+	[at0000]	-- Temperatur
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["no"] = <
+			language = <[ISO_639-1::no]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["no"] = <
+			language = <[ISO_639-1::no]>
+			purpose = <"*(nb)">
+			use = <"*(nb)">
+			misuse = <"*(nb)">
+			copyright = <"*(nb)">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"CC32B759CAD36FE871C17B9F3301EF54">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Temperatur
+		data matches {
+			HISTORY[at0001] matches {	-- Event Series
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- Any event
+						data matches {
+							ITEM_TREE[at0003] matches {	-- Tree
+								items cardinality matches {1..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Kroppstemperatur
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::127]>
+												list = <
+													["1"] = <
+														units = <"°C">
+														magnitude = <|0.0..50.0|>
+														precision = <|2|>
+													>
+													["2"] = <
+														units = <"°F">
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Målested
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0007, 	-- Munn
+													at0008, 	-- Øre
+													at0009, 	-- Rektum
+													at0010]	-- Urinblære
+												}
+											}
+										}
+									}
+									ELEMENT[at0006] occurrences matches {0..1} matches {	-- Merknad
+										value matches {
+											DV_TEXT matches {*}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["no"] = <
+			items = <
+				["at0000"] = <
+					text = <"Temperatur">
+					description = <"Pasientens kroppstemperatur.">
+				>
+				["at0001"] = <
+					text = <"*Event Series(nb)">
+					description = <"*@ internal @(nb)">
+				>
+				["at0002"] = <
+					text = <"*Any event(nb)">
+					description = <"**(nb)">
+				>
+				["at0003"] = <
+					text = <"*Tree(nb)">
+					description = <"*@ internal @(nb)">
+				>
+				["at0004"] = <
+					text = <"Kroppstemperatur">
+					description = <"Pasientens kroppstemperatur målt i C eller F.">
+				>
+				["at0005"] = <
+					text = <"Målested">
+					description = <"Sted på kroppen temperaturen ble målt.">
+				>
+				["at0006"] = <
+					text = <"Merknad">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Munn">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Øre">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Rektum">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Urinblære">
+					description = <"*">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Temperatur">
+					description = <"Pasientens kroppstemperatur.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Kroppstemperatur">
+					description = <"Pasientens kroppstemperatur målt i C eller F.">
+				>
+				["at0005"] = <
+					text = <"Målested">
+					description = <"Sted på kroppen temperaturen ble målt.">
+				>
+				["at0006"] = <
+					text = <"Merknad">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Munn">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Øre">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Rektum">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Urinblære">
+					description = <"*">
+				>
+			>
+		>
+	>

@@ -1,0 +1,219 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-CLUSTER.pasi_underekstremitet.v3
+
+concept
+	[at0000]	-- PASI for underekstremitet
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["no"] = <
+			language = <[ISO_639-1::no]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["no"] = <
+			language = <[ISO_639-1::no]>
+			purpose = <"*(nb)">
+			use = <"*(nb)">
+			misuse = <"*(nb)">
+			copyright = <"*(nb)">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"F90CAD04707953E8D684C61F4E4E56D0">
+	>
+
+definition
+	CLUSTER[at0000] matches {	-- PASI for underekstremitet
+		items cardinality matches {4; unordered} matches {
+			ELEMENT[at0033] matches {	-- Erythem (0-4)
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::380]>
+						list = <
+							["1"] = <
+								units = <"">
+								magnitude = <|0.0..4.0|>
+								precision = <|0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0034] matches {	-- Tykkelse (0-4)
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::380]>
+						list = <
+							["1"] = <
+								units = <"">
+								magnitude = <|0.0..4.0|>
+								precision = <|0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0035] matches {	-- Skjelling (0-4)
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::380]>
+						list = <
+							["1"] = <
+								units = <"">
+								magnitude = <|0.0..4.0|>
+								precision = <|0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0036] matches {	-- Total alvorlighet
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::380]>
+						list = <
+							["1"] = <
+								units = <"">
+								precision = <|0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0037] occurrences matches {0..1} matches {	-- Grad av involvering (0-6)
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::380]>
+						list = <
+							["1"] = <
+								units = <"">
+								magnitude = <|0.0..6.0|>
+								precision = <|0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0031] occurrences matches {0..1} matches {	-- Total alvorlighet * Grad av involvering
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::380]>
+						list = <
+							["1"] = <
+								units = <"">
+								precision = <|0|>
+							>
+						>
+					>
+				}
+			}
+			ELEMENT[at0032] occurrences matches {0..1} matches {	-- PASISCORE underekstremitet (0,4)
+				value matches {
+					C_DV_QUANTITY <
+						property = <[openehr::380]>
+						list = <
+							["1"] = <
+								units = <"">
+								precision = <|2|>
+							>
+						>
+					>
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["no"] = <
+			items = <
+				["at0000"] = <
+					text = <"PASI for underekstremitet">
+					description = <"Psoriasis Area and Severity Index for underekstremitet.
+ Inkluderer lesjonens alvorlighet og utbredelsesområdet.">
+				>
+				["at0031"] = <
+					text = <"Total alvorlighet * Grad av involvering">
+					description = <"Total alvorlighet * Grad av involvering.">
+				>
+				["at0032"] = <
+					text = <"PASISCORE underekstremitet (0,4)">
+					description = <"PASISCORE underekstremitet = Total alvorlighet * Grad av involvering * 0,40.">
+				>
+				["at0033"] = <
+					text = <"Erythem (0-4)">
+					description = <"0 = ingen, 1 = lett, 2 = moderat, 3 = alvorlig, 4 = veldig alvorlig.">
+				>
+				["at0034"] = <
+					text = <"Tykkelse (0-4)">
+					description = <"0 = ingen, 1 = lett, 2 = moderat, 3 = alvorlig, 4 = veldig alvorlig.">
+				>
+				["at0035"] = <
+					text = <"Skjelling (0-4)">
+					description = <"0 = ingen, 1 = lett, 2 = moderat, 3 = alvorlig, 4 = veldig alvorlig.">
+				>
+				["at0036"] = <
+					text = <"Total alvorlighet">
+					description = <"Total alvorlighet.">
+				>
+				["at0037"] = <
+					text = <"Grad av involvering (0-6)">
+					description = <"0 = ingen, 1 = <10%, 2 = 10-29%, 3 = 30-49%, 4 = 50-69%, 5 = 70-89%, 6 = 90-100%.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"PASI for underekstremitet">
+					description = <"Psoriasis Area and Severity Index for underekstremitet.
+ Inkluderer lesjonens alvorlighet og utbredelsesområdet.">
+				>
+				["at0031"] = <
+					text = <"Total alvorlighet * Grad av involvering">
+					description = <"Total alvorlighet * Grad av involvering.">
+				>
+				["at0032"] = <
+					text = <"PASISCORE underekstremitet (0,4)">
+					description = <"PASISCORE underekstremitet = Total alvorlighet * Grad av involvering * 0,40.">
+				>
+				["at0033"] = <
+					text = <"Erythem (0-4)">
+					description = <"0 = ingen, 1 = lett, 2 = moderat, 3 = alvorlig, 4 = veldig alvorlig.">
+				>
+				["at0034"] = <
+					text = <"Tykkelse (0-4)">
+					description = <"0 = ingen, 1 = lett, 2 = moderat, 3 = alvorlig, 4 = veldig alvorlig.">
+				>
+				["at0035"] = <
+					text = <"Skjelling (0-4)">
+					description = <"0 = ingen, 1 = lett, 2 = moderat, 3 = alvorlig, 4 = veldig alvorlig.">
+				>
+				["at0036"] = <
+					text = <"Total alvorlighet">
+					description = <"Total alvorlighet">
+				>
+				["at0037"] = <
+					text = <"Grad av involvering (0-6)">
+					description = <"0 = ingen, 1 = <10%, 2 = 10-29%, 3 = 30-49%, 4 = 50-69%, 5 = 70-89%, 6 = 90-100%.">
+				>
+			>
+		>
+	>

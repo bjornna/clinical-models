@@ -1,0 +1,148 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-COMPOSITION.pasiscore.v1
+
+concept
+	[at0000]	-- Pasiscore
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["no"] = <
+			language = <[ISO_639-1::no]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["no"] = <
+			language = <[ISO_639-1::no]>
+			purpose = <"*(nb)">
+			use = <"*(nb)">
+			misuse = <"*(nb)">
+			copyright = <"*(nb)">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"015CAA6892944BF0E8B38683F8F09C2D">
+	>
+
+definition
+	COMPOSITION[at0000] matches {	-- Pasiscore
+		category matches {
+			DV_CODED_TEXT matches {
+				defining_code matches {[openehr::433]}
+			}
+		}
+		context matches {
+			EVENT_CONTEXT matches {
+				other_context matches {
+					ITEM_TREE[at0001] matches {*}
+				}
+			}
+		}
+		content cardinality matches {5..*; unordered} matches {
+			allow_archetype EVALUATION[at0005] matches {	-- PASISCORE hode
+				include
+					archetype_id/value matches {/openEHR-EHR-EVALUATION\.pasiscore_hode(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-EVALUATION\.pasiscore_hode(-[a-zA-Z0-9_]+)*\.v2/}
+			}
+			allow_archetype EVALUATION[at0006] matches {	-- PASISCORE truncus
+				include
+					archetype_id/value matches {/openEHR-EHR-EVALUATION\.pasiscore_truncus(-[a-zA-Z0-9_]+)*\.v1|openEHR-EHR-EVALUATION\.pasiscore_truncus(-[a-zA-Z0-9_]+)*\.v2/}
+			}
+			allow_archetype EVALUATION[at0008] matches {	-- PASISCORE overekstremitet
+				include
+					archetype_id/value matches {/openEHR-EHR-EVALUATION\.pasiscore_overekstremitet(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+			allow_archetype EVALUATION[at0009] matches {	-- PASISCORE underekstremitet
+				include
+					archetype_id/value matches {/openEHR-EHR-EVALUATION\.pasiscore_underekstremitet(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+			allow_archetype EVALUATION[at0007] matches {	-- PASISCORE TOTAL
+				include
+					archetype_id/value matches {/openEHR-EHR-EVALUATION\.pasiscore_total(-[a-zA-Z0-9_]+)*\.v1/}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["no"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pasiscore">
+					description = <"Psoriasis Area Severity Index (PASI) er en indeks som brukes til å uttrykke alvorlighetsgraden av psoriasis.
+Det kombinerer alvorlighetsgrad (erythema, indurasjon og avskalling) og andel av berørt område.">
+				>
+				["at0001"] = <
+					text = <"*Tree(nb)">
+					description = <"*@ internal @(nb)">
+				>
+				["at0005"] = <
+					text = <"PASISCORE hode">
+					description = <"PASISCORE hode">
+				>
+				["at0006"] = <
+					text = <"PASISCORE truncus">
+					description = <"PASISCORE truncus">
+				>
+				["at0007"] = <
+					text = <"PASISCORE TOTAL">
+					description = <"PASISCORE TOTAL">
+				>
+				["at0008"] = <
+					text = <"PASISCORE overekstremitet">
+					description = <"PASISCORE overekstremitet">
+				>
+				["at0009"] = <
+					text = <"PASISCORE underekstremitet">
+					description = <"PASISCORE underekstremitet">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Pasiscore">
+					description = <"Psoriasis Area Severity Index (PASI) er en indeks som brukes til å uttrykke alvorlighetsgraden av psoriasis.
+Det kombinerer alvorlighetsgrad (erythema, indurasjon og avskalling) og andel av berørt område.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0005"] = <
+					text = <"PASISCORE hode">
+					description = <"PASISCORE hode">
+				>
+				["at0006"] = <
+					text = <"PASISCORE truncus">
+					description = <"PASISCORE truncus">
+				>
+				["at0007"] = <
+					text = <"PASISCORE TOTAL">
+					description = <"PASISCORE TOTAL">
+				>
+				["at0008"] = <
+					text = <"PASISCORE overekstremitet">
+					description = <"PASISCORE overekstremitet">
+				>
+				["at0009"] = <
+					text = <"PASISCORE underekstremitet">
+					description = <"PASISCORE underekstremitet">
+				>
+			>
+		>
+	>

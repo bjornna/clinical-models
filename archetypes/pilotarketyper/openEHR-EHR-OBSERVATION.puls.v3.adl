@@ -1,0 +1,398 @@
+archetype (adl_version=1.4)
+	openEHR-EHR-OBSERVATION.puls.v3
+
+concept
+	[at0000]	-- Puls
+language
+	original_language = <[ISO_639-1::nb]>
+	translations = <
+		["no"] = <
+			language = <[ISO_639-1::no]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"">
+	>
+	details = <
+		["no"] = <
+			language = <[ISO_639-1::no]>
+			purpose = <"*(nb)">
+			use = <"*(nb)">
+			misuse = <"*(nb)">
+			copyright = <"*(nb)">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"">
+			use = <"">
+			misuse = <"">
+			copyright = <"">
+		>
+	>
+	lifecycle_state = <"0">
+	other_contributors = <>
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"9075F4A62FFEEAB5CCD2C9D4B0C1292C">
+	>
+
+definition
+	OBSERVATION[at0000] matches {	-- Puls
+		data matches {
+			HISTORY[at0001] matches {	-- *Event Series(nb)
+				events cardinality matches {1..*; unordered} matches {
+					EVENT[at0002] occurrences matches {0..1} matches {	-- *Any event(nb)
+						data matches {
+							ITEM_TREE[at0003] matches {	-- *Tree(nb)
+								items cardinality matches {0..*; unordered} matches {
+									ELEMENT[at0004] occurrences matches {0..1} matches {	-- Puls
+										value matches {
+											C_DV_QUANTITY <
+												property = <[openehr::382]>
+												list = <
+													["1"] = <
+														units = <"/min">
+														magnitude = <|0.0..2000.0|>
+														precision = <|0|>
+													>
+												>
+											>
+										}
+									}
+									ELEMENT[at0005] occurrences matches {0..1} matches {	-- Målested
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0008, 	-- Høyre radialarterie
+													at0006, 	-- Venstre radialarterie
+													at0007, 	-- Høyre lårbensarterie
+													at0009, 	-- Venstre lårbensarterie
+													at0025, 	-- Høyre halsarterie
+													at0026, 	-- Venstre halsarterie
+													at0024]	-- Hjerte
+												}
+											}
+										}
+									}
+									ELEMENT[at0019] occurrences matches {0..1} matches {	-- Pasientens posisjon
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0020, 	-- Liggende
+													at0021, 	-- Sittende
+													at0022, 	-- Tilbakelent
+													at0023]	-- Stående
+												}
+											}
+										}
+									}
+									ELEMENT[at0010] occurrences matches {0..1} matches {	-- Pulsbeskrivelse
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0011, 	-- Normal puls
+													at0012, 	-- Takykardi
+													at0013, 	-- Bradykardi
+													at0014]	-- Både takykardi og bradykardi
+												}
+											}
+										}
+									}
+									ELEMENT[at0015] occurrences matches {0..1} matches {	-- Pulsrytme
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0016, 	-- Regelmessig
+													at0017, 	-- Regelmessig uregelmessig
+													at0018]	-- Uregelmessig uregelmessig
+												}
+											}
+										}
+									}
+									ELEMENT[at0027] occurrences matches {0..1} matches {	-- Metode
+										value matches {
+											DV_CODED_TEXT matches {
+												defining_code matches {
+													[local::
+													at0028, 	-- Palpasjon
+													at0029, 	-- Auskultasjon
+													at0030]	-- Bruk av utstyr
+												}
+											}
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["no"] = <
+			items = <
+				["at0000"] = <
+					text = <"Puls">
+					description = <"Pasientens puls.">
+				>
+				["at0001"] = <
+					text = <"*Event Series(nb)">
+					description = <"*@ internal @(nb)">
+				>
+				["at0002"] = <
+					text = <"*Any event(nb)">
+					description = <"**(nb)">
+				>
+				["at0003"] = <
+					text = <"*Tree(nb)">
+					description = <"*@ internal @(nb)">
+				>
+				["at0004"] = <
+					text = <"Puls">
+					description = <"Pasientens puls.">
+				>
+				["at0005"] = <
+					text = <"Målested">
+					description = <"Plass på kroppen der pulsen ble målt.">
+				>
+				["at0006"] = <
+					text = <"Venstre radialarterie">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Høyre lårbensarterie">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Høyre radialarterie">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Venstre lårbensarterie">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Pulsbeskrivelse">
+					description = <"Beskrivelse av pulsen.">
+				>
+				["at0011"] = <
+					text = <"Normal puls">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Takykardi">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Bradykardi">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Både takykardi og bradykardi">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Pulsrytme">
+					description = <"Observert pulsrytme.">
+				>
+				["at0016"] = <
+					text = <"Regelmessig">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Regelmessig uregelmessig">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Uregelmessig uregelmessig">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Pasientens posisjon">
+					description = <"Pasientens posisjon når pulsen ble målt.">
+				>
+				["at0020"] = <
+					text = <"Liggende">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Sittende">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Tilbakelent">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Stående">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Hjerte">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Høyre halsarterie">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Venstre halsarterie">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Metode">
+					description = <"Metoden som er brukt for å måle puls.">
+				>
+				["at0028"] = <
+					text = <"Palpasjon">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Auskultasjon">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Bruk av utstyr">
+					description = <"*">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Puls">
+					description = <"Pasientens puls.">
+				>
+				["at0001"] = <
+					text = <"Event Series">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					text = <"Any event">
+					description = <"*">
+				>
+				["at0003"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0004"] = <
+					text = <"Puls">
+					description = <"Pasientens puls.">
+				>
+				["at0005"] = <
+					text = <"Målested">
+					description = <"Plass på kroppen der pulsen ble målt.">
+				>
+				["at0006"] = <
+					text = <"Venstre radialarterie">
+					description = <"*">
+				>
+				["at0007"] = <
+					text = <"Høyre lårbensarterie">
+					description = <"*">
+				>
+				["at0008"] = <
+					text = <"Høyre radialarterie">
+					description = <"*">
+				>
+				["at0009"] = <
+					text = <"Venstre lårbensarterie">
+					description = <"*">
+				>
+				["at0010"] = <
+					text = <"Pulsbeskrivelse">
+					description = <"Beskrivelse av pulsen.">
+				>
+				["at0011"] = <
+					text = <"Normal puls">
+					description = <"*">
+				>
+				["at0012"] = <
+					text = <"Takykardi">
+					description = <"*">
+				>
+				["at0013"] = <
+					text = <"Bradykardi">
+					description = <"*">
+				>
+				["at0014"] = <
+					text = <"Både takykardi og bradykardi">
+					description = <"*">
+				>
+				["at0015"] = <
+					text = <"Pulsrytme">
+					description = <"Observert pulsrytme.">
+				>
+				["at0016"] = <
+					text = <"Regelmessig">
+					description = <"*">
+				>
+				["at0017"] = <
+					text = <"Regelmessig uregelmessig">
+					description = <"*">
+				>
+				["at0018"] = <
+					text = <"Uregelmessig uregelmessig">
+					description = <"*">
+				>
+				["at0019"] = <
+					text = <"Pasientens posisjon">
+					description = <"Pasientens posisjon når pulsen ble målt.">
+				>
+				["at0020"] = <
+					text = <"Liggende">
+					description = <"*">
+				>
+				["at0021"] = <
+					text = <"Sittende">
+					description = <"*">
+				>
+				["at0022"] = <
+					text = <"Tilbakelent">
+					description = <"*">
+				>
+				["at0023"] = <
+					text = <"Stående">
+					description = <"*">
+				>
+				["at0024"] = <
+					text = <"Hjerte">
+					description = <"*">
+				>
+				["at0025"] = <
+					text = <"Høyre halsarterie">
+					description = <"*">
+				>
+				["at0026"] = <
+					text = <"Venstre halsarterie">
+					description = <"*">
+				>
+				["at0027"] = <
+					text = <"Metode">
+					description = <"Metoden som er brukt for å måle puls.">
+				>
+				["at0028"] = <
+					text = <"Palpasjon">
+					description = <"*">
+				>
+				["at0029"] = <
+					text = <"Auskultasjon ">
+					description = <"*">
+				>
+				["at0030"] = <
+					text = <"Bruk av utstyr">
+					description = <"*">
+				>
+			>
+		>
+	>

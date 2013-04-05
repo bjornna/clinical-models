@@ -1,0 +1,148 @@
+﻿archetype (adl_version=1.4)
+	openEHR-EHR-EVALUATION.social_summary.v2
+
+concept
+	[at0000]	-- Familie / Sosialt
+language
+	original_language = <[ISO_639-1::en]>
+	translations = <
+		["no"] = <
+			language = <[ISO_639-1::no]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			author = <
+				["name"] = <"?">
+			>
+		>
+	>
+description
+	original_author = <
+		["name"] = <"Heather Leslie">
+		["organisation"] = <"Ocean Informatics">
+		["email"] = <"heather.leslie@oceaninformatics.com">
+		["date"] = <"24/05/2011">
+	>
+	details = <
+		["no"] = <
+			language = <[ISO_639-1::no]>
+			purpose = <"*To record a narrative summary about social circumstances or experiences that may have a potential impact on an individual's health, and to provide a framework in which to nest detailed CLUSTER archetypes, each of which will describe the various aspects of social circumstances or experiences in detail.(en)">
+			use = <"*Use to record a narrative summary about social circumstances or experiences that may have a potential impact on an individual's health. 
+
+Use to incorporate the narrative descriptions of social circumstances or experiences already captured within existing clinical systems into an archetyped format.
+
+Use as a container archetype - to provide a common, queryable ENTRY archetype in which specific, detailed CLUSTER archetypes can be nested. Examples of appropriate CLUSTER archetypes may include, and are not limited to, relationships with others, social supports, living arrangements, employment, education and religion.
+
+The use of the term 'social summary' varies enormously in practice. This archetype has been designed to allow the concepts that express social history in varying clincial contexts to be represented with the appropriate mix of re-useable archetypes.
+(en)">
+			keywords = <"*social(en)", "*family(en)", "*education(en)", "*occupation(en)", "*environment(en)", "*housing(en)", "*finances(en)">
+			misuse = <"*Not to be used to record Lifestyle-related information - for example, use specific archetypes for alcohol, tobacco and other substance use; diet and nutrition; and physical activity.(en)">
+			copyright = <"*© National E-Health Transition Authority(en)">
+		>
+		["en"] = <
+			language = <[ISO_639-1::en]>
+			purpose = <"To record a narrative summary about social circumstances or experiences that may have a potential impact on an individual's health, and to provide a framework in which to nest detailed CLUSTER archetypes, each of which will describe the various aspects of social circumstances or experiences in detail.">
+			use = <"Use to record a narrative summary about social circumstances or experiences that may have a potential impact on an individual's health. 
+
+Use to incorporate the narrative descriptions of social circumstances or experiences already captured within existing clinical systems into an archetyped format.
+
+Use as a container archetype - to provide a common, queryable ENTRY archetype in which specific, detailed CLUSTER archetypes can be nested. Examples of appropriate CLUSTER archetypes may include, and are not limited to, relationships with others, social supports, living arrangements, employment, education and religion.
+
+The use of the term 'social summary' varies enormously in practice. This archetype has been designed to allow the concepts that express social history in varying clincial contexts to be represented with the appropriate mix of re-useable archetypes.
+">
+			keywords = <"social", "family", "education", "occupation", "environment", "housing", "finances">
+			misuse = <"Not to be used to record Lifestyle-related information - for example, use specific archetypes for alcohol, tobacco and other substance use; diet and nutrition; and physical activity.">
+			copyright = <"© National E-Health Transition Authority">
+		>
+		["nb"] = <
+			language = <[ISO_639-1::nb]>
+			purpose = <"*To record a narrative summary about social circumstances or experiences that may have a potential impact on an individual's health, and to provide a framework in which to nest detailed CLUSTER archetypes, each of which will describe the various aspects of social circumstances or experiences in detail.(en)">
+			use = <"*Use to record a narrative summary about social circumstances or experiences that may have a potential impact on an individual's health. 
+
+Use to incorporate the narrative descriptions of social circumstances or experiences already captured within existing clinical systems into an archetyped format.
+
+Use as a container archetype - to provide a common, queryable ENTRY archetype in which specific, detailed CLUSTER archetypes can be nested. Examples of appropriate CLUSTER archetypes may include, and are not limited to, relationships with others, social supports, living arrangements, employment, education and religion.
+
+The use of the term 'social summary' varies enormously in practice. This archetype has been designed to allow the concepts that express social history in varying clincial contexts to be represented with the appropriate mix of re-useable archetypes.
+(en)">
+			keywords = <"*social(en)", "*family(en)", "*education(en)", "*occupation(en)", "*environment(en)", "*housing(en)", "*finances(en)">
+			misuse = <"*Not to be used to record Lifestyle-related information - for example, use specific archetypes for alcohol, tobacco and other substance use; diet and nutrition; and physical activity.(en)">
+			copyright = <"*© National E-Health Transition Authority(en)">
+		>
+	>
+	lifecycle_state = <"AuthorDraft">
+	other_contributors = <"Rita Apelt, Department of Health,NT, Australia", "Stephen Chu, NEHTA, Australia", "Margaret Cotter, AMSANT, Australia", "Tanya Gardner, CAAC, Australia", "Sam Heard, Ocean Informatics, Australia (Editor)", "Heather Leslie, Ocean Informatics, Australia (Editor)", "Ian McNicoll, Ocean Informatics UK, United Kingdom", "Jeremy Oats, NT Health, Australia", "Steven Schatz, Department of Health (Northern Territory), Australia", "Rosalie Schultz, Central Australia Remote Health, Australia", "Jo Wright, NT Dept of Health, Australia (Editor)">
+	other_details = <
+		["MD5-CAM-1.0.1"] = <"9B556581DFC355E4B5758A3911B957E0">
+	>
+
+definition
+	EVALUATION[at0000] matches {	-- Familie / Sosialt
+		data matches {
+			ITEM_TREE[at0001] matches {	-- *Tree(en)
+				items cardinality matches {1; unordered} matches {
+					ELEMENT[at0002] matches {	-- Familie og sosialt
+						value matches {
+							DV_TEXT matches {*}
+						}
+					}
+				}
+			}
+		}
+	}
+
+ontology
+	term_definitions = <
+		["no"] = <
+			items = <
+				["at0000"] = <
+					text = <"Familie / Sosialt">
+					description = <"Oppsummert informasjon om pasientens familiesituasjon og sosiale status.">
+				>
+				["at0001"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"Familie og sosialt">
+					description = <"Beskrivelse av pasientens familiesituasjon og sosiale status.">
+				>
+			>
+		>
+		["en"] = <
+			items = <
+				["at0000"] = <
+					text = <"Social Summary">
+					description = <"Summary information about social circumstances or experiences that may have a potential impact on an individual's health.">
+				>
+				["at0001"] = <
+					text = <"Tree">
+					description = <"@ internal @">
+				>
+				["at0002"] = <
+					comment = <"May be used to record a narrative summary of the complete social circumstances or experiences or key aspects of the social summary, which will be supported by additioanl structured data. Details of specific structured findings can be included using CLUSTER archetypes in the 'Social Summary Detail' slot.">
+					text = <"Description">
+					description = <"Narrative summary about social circumstances or experiences that may have a potential impact on an individual's health.">
+				>
+			>
+		>
+		["nb"] = <
+			items = <
+				["at0000"] = <
+					text = <"Familie / Sosialt">
+					description = <"Oppsummert informasjon om pasientens familiesituasjon og sosiale status.">
+				>
+				["at0001"] = <
+					text = <"*Tree(en)">
+					description = <"*@ internal @(en)">
+				>
+				["at0002"] = <
+					text = <"Familie og sosialt">
+					description = <"Beskrivelse av pasientens familiesituasjon og sosiale status.">
+				>
+			>
+		>
+	>
