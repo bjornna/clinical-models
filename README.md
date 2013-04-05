@@ -1,6 +1,6 @@
-clinical-models
+Norske Arketyper 
 ===============
-Initial repository for cooperation on Norweigan archetypes. 
+Dette er et lite bibliotek av arketyper. Arketypene er utviklet som endel av utvikling og testing av arketypeløsning i DIPS Arena.
 
-The first project will be archetypes for reporting to Kreftregisteret. 
-See: http://kreftregisteret.no/no/Registrene/Innmelding-til-Kreftregisteret/KREMT---Kreftregisterets-elektroniske-meldetjeneste/ 
+Det viktigste bidraget så langt kommer fra Kreftregisteret. De har utarbeidet arketyper som et forsøk på å modellere Kreftmeldinger som openEHR arketyper. 
+Les mer om KREMT - Kreftregisterets elektroniske meldetjeneste her:http://kreftregisteret.no/no/Registrene/Innmelding-til-Kreftregisteret/KREMT---Kreftregisterets-elektroniske-meldetjeneste/ 
